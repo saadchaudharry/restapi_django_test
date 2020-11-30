@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 from .serilaizer import Userserializer,AuthTokenSerializer
 from rest_framework import generics
 from rest_framework.response import Response
@@ -12,6 +13,8 @@ from rest_framework.authtoken.models import Token
 
 # class CreateUserView(generics.):
 #     serializer_class = Userserializer
+
+
 @api_view(['POST'])
 def CreateUserView(request):
     if request.method=="POST":
@@ -58,3 +61,5 @@ def mee(request):
 class CreateAuthToken(ObtainAuthToken):
     serializer_class = AuthTokenSerializer()
     renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
+
+
